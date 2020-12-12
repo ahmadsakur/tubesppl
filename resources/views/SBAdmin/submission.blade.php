@@ -6,7 +6,9 @@
       <h3 class="text-center">Buat Laporan</h3>
       <div class="row justify-content-center">
          <div class="col-md-8">
-            <form>
+            <form action="/submit/{{$detail->id}}" method="POST">
+               @csrf
+               @method('PUT')
                <div class="form-group row">
                   <label for="staticEmail" class="col-sm-2 col-form-label">Ruang</label>
                   <div class="col-sm-10">
@@ -31,7 +33,7 @@
                <div class="form-group row">
                   <label for="bukti" class="col-sm-2 col-form-label">Bukti 1</label>
                   <div class="col-sm-10">
-                     <input type="file" class="form-control-file" id="bukti" name="bukti">
+                     <input type="file" class="form-control-file" id="bukti" name="bukti" required>
                   </div>
                </div>
                <div class="form-group row">
