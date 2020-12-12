@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\Models\Task;
+use PDF;
 
 class HomeController extends Controller
 {
@@ -72,5 +74,18 @@ class HomeController extends Controller
         ->where('task.id',$id)->first();
         
         return view('SBAdmin/submission', compact('detail'));
+    }
+
+    public function generatePDF()
+    {
+        $tasks = DB::table('task')
+            ->join('users', 'task.id_cs', '=', 'users.id')
+            ->join('ruang', 'task.id_ruang', '=', 'ruang.id')
+            ->select('task.*', 'users.name', 'ruang.nama')
+            ->get();
+        
+
+        $pdf = PDF::loadView('cetak',compact('tasks'));
+        return $pdf->download('detail.pdf');
     }
 }
