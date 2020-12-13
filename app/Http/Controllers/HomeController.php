@@ -96,20 +96,11 @@ class HomeController extends Controller
         ->where('id',$id)
         ->update([
             'status' => 'BERSIH',
-            'bukti1' => $request->bukti1->store('bukti1'),
-            'bukti2' => $request->bukti1->store('bukti2'),
-            'bukti3' => $request->bukti1->store('bukti3'),
-            'bukti4' => $request->bukti1->store('bukti4'),
-            'bukti5' => $request->bukti1->store('bukti5'),
-            // 'bukti2' => $request["bukti2"],
-            // 'bukti3' => $request["bukti3"],
-            // 'bukti4' => $request["bukti4"],
-            // 'bukti5' => $request["bukti5"],
-            // $request->bukti1->store('bukti1'),
-            // $request->bukti2->store('bukti2'),
-            // $request->bukti3->store('bukti3'),
-            // $request->bukti4->store('bukti4'),
-            // $request->bukti5->store('bukti5'),
+            'bukti1' => $request->bukti1->store('public/bukti1'),
+            'bukti2' => $request->bukti2->store('public/bukti2'),
+            'bukti3' => $request->bukti3->store('public/bukti3'),
+            'bukti4' => $request->bukti4->store('public/bukti4'),
+            'bukti5' => $request->bukti5->store('public/bukti5'),
         ]);
         
 
