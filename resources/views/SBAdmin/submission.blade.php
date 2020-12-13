@@ -6,7 +6,9 @@
       <h3 class="text-center">Buat Laporan</h3>
       <div class="row justify-content-center">
          <div class="col-md-8">
-            <form>
+            <form action="/submit/{{$detail->id}}" method="POST">
+               @csrf
+               @method('PUT')
                <div class="form-group row">
                   <label for="staticEmail" class="col-sm-2 col-form-label">Ruang</label>
                   <div class="col-sm-10">

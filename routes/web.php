@@ -32,6 +32,6 @@ Route::middleware('role:admin')->resource('penugasan', App\Http\Controllers\Penu
 //cleaner
 Route::middleware('role:cleaner')->get('/home', [App\Http\Controllers\HomeController::class, 'cs'])->name('home');
 Route::middleware('role:cleaner')->get('/submit/{ruang_id}', [App\Http\Controllers\HomeController::class, 'submission']);
-
+Route::middleware('role:cleaner')->put('/submit/{ruang_id}', [App\Http\Controllers\HomeController::class, 'updatestatus']);
 
 

@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Dashboard | Administrator</title>
+  <title>Cleaner Services</title>
 
   <!-- Custom fonts for this template-->
   <link href="{{asset('SBAdmin/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">

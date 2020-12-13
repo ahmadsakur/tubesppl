@@ -73,4 +73,22 @@ class HomeController extends Controller
         
         return view('SBAdmin/submission', compact('detail'));
     }
+
+    public function updatestatus(Request $resuest, $id){
+        DB::table('task')
+        ->where('id',$id)
+        ->update([
+            'status' => 'BERSIH'
+            //masukin request disini
+        ]);
+        
+        $reports = DB::table('task')
+        ->join('users', 'task.id_cs', '=', 'users.id')
+        ->join('ruang', 'task.id_ruang', '=', 'ruang.id')
+        ->select('task.*', 'users.name', 'ruang.nama')
+        ->where('tanggal', '=', Carbon::today())
+        ->where('task.id_cs','=', Auth::id())
+        ->get();
+    return view('SBAdmin/panel',compact('reports'));
+    }
 }
