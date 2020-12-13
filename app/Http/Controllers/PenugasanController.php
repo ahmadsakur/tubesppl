@@ -20,6 +20,8 @@ class PenugasanController extends Controller
             ->join('users', 'task.id_cs', '=', 'users.id')
             ->join('ruang', 'task.id_ruang', '=', 'ruang.id')
             ->select('task.*', 'users.name', 'ruang.nama')
+            ->orderBy('tanggal', 'desc')
+            ->orderBy('nama', 'asc')
             ->get();
         return view('content.penugasan.index',compact('tasks'));
     }
@@ -32,7 +34,7 @@ class PenugasanController extends Controller
     public function create()
     {
         $rooms = DB::table('ruang')->get();
-        $officers = DB::table('users')->get();
+        $officers = DB::table('users')->where('id', '!=', 1)->get();
         return view('content.penugasan.create',compact('rooms','officers'));
     }
 

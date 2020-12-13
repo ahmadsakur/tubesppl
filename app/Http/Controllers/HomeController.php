@@ -76,12 +76,16 @@ class HomeController extends Controller
         return view('SBAdmin/submission', compact('detail'));
     }
 
-    public function generatePDF()
+    public function generatePDF() //minta parameter $tanggal dr input di view
     {
         $tasks = DB::table('task')
             ->join('users', 'task.id_cs', '=', 'users.id')
             ->join('ruang', 'task.id_ruang', '=', 'ruang.id')
             ->select('task.*', 'users.name', 'ruang.nama')
+            ->orderBy('tanggal', 'desc')
+            ->orderBy('nama', 'asc')
+            // tambahin where tanggal = $tanggal
+            ->limit(20)
             ->get();
         
         $pdf = PDF::loadView('cetak',compact('tasks'));

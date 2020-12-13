@@ -11,7 +11,7 @@
             <tr>
                <th style="width: 10px">No</th>
                <th>ID Ruangan</th>
-               <th>ID CS</th>
+               <th>Nama Petugas</th>
                <th>Status</th>
                <th>Tanggal</th>
             </tr>
@@ -27,7 +27,7 @@
             </tr>
             @empty
             <tr>
-               <td colspan="4" align="center">Belum ada Penugasan Hari Ini</td>
+               <td colspan="5" align="center">Belum ada Penugasan Hari Ini</td>
             </tr>
             @endforelse
          </tbody>

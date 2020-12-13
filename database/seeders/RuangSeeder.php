@@ -64,5 +64,57 @@ class RuangSeeder extends Seeder
             'deskripsi' => 'Kamar Mandi 2'
         ]);
 
+        Ruang::Create([
+            'nama'=> 'R011',
+            'deskripsi' => 'Perpustakaan'
+        ]);
+
+        Ruang::Create([
+            'nama'=> 'R012',
+            'deskripsi' => 'Laboratorium 1'
+        ]);
+
+        Ruang::Create([
+            'nama'=> 'R013',
+            'deskripsi' => 'Laboratorium 2'
+        ]);
+
+        Ruang::Create([
+            'nama'=> 'R014',
+            'deskripsi' => 'Kantor Management'
+        ]);
+
+        
+        Ruang::Create([
+            'nama'=> 'R015',
+            'deskripsi' => 'Kantor Developer'
+        ]);
+
+        
+        Ruang::Create([
+            'nama'=> 'R016',
+            'deskripsi' => 'Kantor Desain Grafis'
+        ]);
+
+        Ruang::Create([
+            'nama'=> 'R017',
+            'deskripsi' => 'Gudang'
+        ]);
+
+        Ruang::Create([
+            'nama'=> 'R018',
+            'deskripsi' => 'Lobby'
+        ]);
+
+        Ruang::Create([
+            'nama'=> 'R019',
+            'deskripsi' => 'Ruang Tunggu'
+        ]);
+
+        Ruang::Create([
+            'nama'=> 'R020',
+            'deskripsi' => 'Venue'
+        ]);
+
     }
 }
