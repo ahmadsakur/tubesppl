@@ -1,4 +1,12 @@
 @extends('SBAdmin.admin')
+
+<head>
+   <style>
+      img {
+         padding: 20px;
+      }
+   </style>
+</head>
 @section('content')
 <div id="content">
    <!-- Begin Page Content -->
@@ -30,9 +38,15 @@
       <h4 class="h3 mb-0 text-gray-800">Ruangan Belum dibersihkan</h4>
       @else
 
-      {{-- masukan fungsi foto disini --}}
-      <h4 class="h3 mb-0 text-gray-800">fotonya blm ada</h4>
-      <img src="{{asset('bukti1/VZnpkJpsJO6HVt985qSwxRAzXw2PMqV93cmhPtwT.png')}}" alt="">
+      <div class="col-sm-12">
+         <img src="{{ Storage::url($detail->bukti1) }}" class=".px-2" style="width:300px">
+         <img src="{{ Storage::url($detail->bukti2) }}" class=".px-2" style="width:300px">
+         <img src="{{ Storage::url($detail->bukti3) }}" class=".px-2" style="width:300px">
+         <img src="{{ Storage::url($detail->bukti4) }}" class=".px-2" style="width:300px">
+         <img src="{{ Storage::url($detail->bukti5) }}" class=".px-2" style="width:300px">
+
+      </div>
+
       @endif
 
    </div>
