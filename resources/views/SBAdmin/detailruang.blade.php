@@ -1,4 +1,11 @@
 @extends('SBAdmin.admin')
+<head>
+   <style>
+      img{
+         padding: 20px;
+      }
+   </style>
+</head>
 @section('content')
 <div id="content">
    <!-- Begin Page Content -->
@@ -30,21 +37,15 @@
       <h4 class="h3 mb-0 text-gray-800">Ruangan Belum dibersihkan</h4>
       @else
      
-      <div class="col-sm-4">
-         <img src="{{ Storage::url($detail->bukti1) }}"  style="width:300px">
+      <div class="col-sm-12">
+         <img src="{{ Storage::url($detail->bukti1) }}" class=".px-2" style="width:300px">
+         <img src="{{ Storage::url($detail->bukti2) }}" class=".px-2" style="width:300px">
+         <img src="{{ Storage::url($detail->bukti3) }}" class=".px-2" style="width:300px">
+         <img src="{{ Storage::url($detail->bukti4) }}" class=".px-2" style="width:300px">
+         <img src="{{ Storage::url($detail->bukti5) }}" class=".px-2" style="width:300px">
+
      </div>
-      <div class="col-sm-4">
-         <img src="{{ Storage::url($detail->bukti2) }}"  style="width:300px">
-     </div>
-      <div class="col-sm-4">
-         <img src="{{ Storage::url($detail->bukti3) }}"  style="width:300px">
-     </div>
-      <div class="col-sm-4">
-         <img src="{{ Storage::url($detail->bukti4) }}"  style="width:300px">
-     </div>
-      <div class="col-sm-4">
-         <img src="{{ Storage::url($detail->bukti5) }}"  style="width:300px">
-     </div>
+
       @endif
 
    </div>
