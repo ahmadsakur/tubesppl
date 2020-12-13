@@ -29,8 +29,10 @@
       @if ($detail->status == 'KOTOR')
       <h4 class="h3 mb-0 text-gray-800">Ruangan Belum dibersihkan</h4>
       @else
+
       {{-- masukan fungsi foto disini --}}
       <h4 class="h3 mb-0 text-gray-800">fotonya blm ada</h4>
+      <img src="{{asset('bukti1/VZnpkJpsJO6HVt985qSwxRAzXw2PMqV93cmhPtwT.png')}}" alt="">
       @endif
 
    </div>

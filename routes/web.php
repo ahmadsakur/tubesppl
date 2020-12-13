@@ -27,11 +27,10 @@ Route::middleware('role:admin')->get('/dashboard/{ruang_id}', [App\Http\Controll
 Route::middleware('role:admin')->resource('pegawai', App\Http\Controllers\PegawaiController::class);
 Route::middleware('role:admin')->resource('ruang', App\Http\Controllers\RuangController::class);
 Route::middleware('role:admin')->resource('penugasan', App\Http\Controllers\PenugasanController::class);
-
+Route::middleware('role:admin')->get('/cetak', [App\Http\Controllers\HomeController::class, 'generatePDF']);
 
 //cleaner
 Route::middleware('role:cleaner')->get('/home', [App\Http\Controllers\HomeController::class, 'cs'])->name('home');
 Route::middleware('role:cleaner')->get('/submit/{ruang_id}', [App\Http\Controllers\HomeController::class, 'submission']);
 Route::middleware('role:cleaner')->put('/submit/{ruang_id}', [App\Http\Controllers\HomeController::class, 'updatestatus']);
-
 
