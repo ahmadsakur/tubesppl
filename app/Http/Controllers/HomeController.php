@@ -38,6 +38,7 @@ class HomeController extends Controller
                 ->join('ruang', 'task.id_ruang', '=', 'ruang.id')
                 ->select('task.*', 'users.name', 'ruang.nama')
                 ->where('tanggal', '=', Carbon::today())
+                ->orderBy('id_ruang','asc')
                 ->get();
         return view('SBAdmin/dashboard',compact('reports'));
     }
@@ -76,16 +77,18 @@ class HomeController extends Controller
         return view('SBAdmin/submission', compact('detail'));
     }
 
-    public function generatePDF() //minta parameter $tanggal dr input di view
+    public function generatePDF(Request $request)
     {
+        // dd($request["tanggal"]);
         $tasks = DB::table('task')
             ->join('users', 'task.id_cs', '=', 'users.id')
             ->join('ruang', 'task.id_ruang', '=', 'ruang.id')
             ->select('task.*', 'users.name', 'ruang.nama')
             ->orderBy('tanggal', 'desc')
             ->orderBy('nama', 'asc')
-            // tambahin where tanggal = $tanggal
-            ->limit(20)
+            ->where('tanggal', '=', $request["tanggal"])
+            // ->where('tanggal', '=', Carbon::today())
+            // ->limit(20)
             ->get();
         
         $pdf = PDF::loadView('cetak',compact('tasks'));

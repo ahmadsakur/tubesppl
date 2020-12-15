@@ -8,13 +8,17 @@
       <div class="d-sm-flex align-items-center justify-content-between mb-4">
          <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
 
+         <div class="print d-none d-sm-inline-block">
+            <form action="/cetak" method="POST">
+               @csrf
+               <input type="date" name="tanggal" id="tanggal">
+               <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                     class="fas fa-download fa-sm text-white-50"></i> Generate Report</button>
+            </form>
 
-         {{-- ini disini masukin input buat daftar tanggal aja kali --}}
-
-
-
-         <a href="/cetak" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-               class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+            {{-- <a href="/cetak" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm mt-2"><i
+                  class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> --}}
+         </div>
       </div>
       <!-- Content Row -->
       <div class="row">

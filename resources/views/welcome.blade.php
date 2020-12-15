@@ -30,14 +30,14 @@
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="fa fa-bars"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            {{-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
                     <a class="nav-link" href="post.html">Our Service</a>
                     <a class="nav-link" href="#">Coverage</a>
                     <a class="nav-link" href="#">Testimonial</a>
                     <a class="nav-link" href="#">Contact Us</a>
                 </div>
-            </div>
+            </div> --}}
         </nav>
     </div>
     <!-- end of navbar -->

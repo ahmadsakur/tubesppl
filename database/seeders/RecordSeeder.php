@@ -21,8 +21,8 @@ class RecordSeeder extends Seeder
             DB::table('task')->insert([
                 'id_ruang' => strval($ruang),
                 'id_cs' => strval($cs),
-                'status' => 'BERSIH',
-                'tanggal' => '2020-11-30'
+                'status' => 'KOTOR',
+                'tanggal' => '2020-12-15'
             ]);
             $cs++; 
             $ruang++;
@@ -34,8 +34,8 @@ class RecordSeeder extends Seeder
             DB::table('task')->insert([
                 'id_ruang' => strval($ruang2),
                 'id_cs' => strval($cs2),
-                'status' => 'BERSIH',
-                'tanggal' => '2020-11-30'
+                'status' => 'KOTOR',
+                'tanggal' => '2020-12-15'
             ]);
             $cs2++; 
             $ruang2++;
