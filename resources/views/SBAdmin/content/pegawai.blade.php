@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-   <h3 class="text-center">Data Customer Services</h3>
+   <h3 class="text-center">Data Cleaning Services</h3>
    <a href="" style=" transform: translateY(17px);" class="btn btn-primary float-right m"><i class="fa fa-file mr-1"
          aria-hidden="true"></i> Add
       CS</a>
