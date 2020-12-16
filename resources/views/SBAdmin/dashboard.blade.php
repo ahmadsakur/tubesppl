@@ -3,10 +3,14 @@
 <div id="content">
    <!-- Begin Page Content -->
    <div class="container-fluid">
+      <div class="row justify-content-center mb-2" style="margin-top: -30px">
+         <h1 class="h mb-0 text-gray-800">Monitoring Kebersihan dan Kerapihan Ruang</h1>
+         <h1 class="h mb-0 text-gray-800">Gedung Bersama Maju</h1>
+      </div>
 
       <!-- Page Heading -->
       <div class="d-sm-flex align-items-center justify-content-between mb-4">
-         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+         <h1 class="h3 mb-0 text-gray-800">{{$tanggal}}</h1>
 
          <div class="print d-none d-sm-inline-block">
             <form action="/cetak" method="POST">

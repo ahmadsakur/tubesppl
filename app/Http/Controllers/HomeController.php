@@ -33,6 +33,7 @@ class HomeController extends Controller
     public function admin()
     {
         //query untuk cards
+        $tanggal = date("j F, Y");
         $reports = DB::table('task')
                 ->join('users', 'task.id_cs', '=', 'users.id')
                 ->join('ruang', 'task.id_ruang', '=', 'ruang.id')
@@ -40,7 +41,7 @@ class HomeController extends Controller
                 ->where('tanggal', '=', Carbon::today())
                 ->orderBy('id_ruang','asc')
                 ->get();
-        return view('SBAdmin/dashboard',compact('reports'));
+        return view('SBAdmin/dashboard',compact('tanggal','reports'));
     }
 
     public function detailruang($id){
@@ -77,22 +78,36 @@ class HomeController extends Controller
         return view('SBAdmin/submission', compact('detail'));
     }
 
-    public function generatePDF(Request $request)
+    public function generatePDF(Request $request) //minta parameter $tanggal dr input di view
     {
-        // dd($request["tanggal"]);
-        $tasks = DB::table('task')
+        if ($request["tanggal"] == null){
+            $tasks = DB::table('task')
             ->join('users', 'task.id_cs', '=', 'users.id')
             ->join('ruang', 'task.id_ruang', '=', 'ruang.id')
             ->select('task.*', 'users.name', 'ruang.nama')
-            ->orderBy('tanggal', 'desc')
+            // ->whereDate('tanggal', '=', $request->date)
+            ->orderBy('nama', 'asc')
+            ->where('tanggal', '=', Carbon::today())
+            // ->limit(20)
+            ->limit(20)
+            ->get();
+        }
+        else{
+            $tasks = DB::table('task')
+            ->join('users', 'task.id_cs', '=', 'users.id')
+            ->join('ruang', 'task.id_ruang', '=', 'ruang.id')
+            ->select('task.*', 'users.name', 'ruang.nama')
+            // ->whereDate('tanggal', '=', $request->date)
             ->orderBy('nama', 'asc')
             ->where('tanggal', '=', $request["tanggal"])
             // ->where('tanggal', '=', Carbon::today())
             // ->limit(20)
+            ->limit(20)
             ->get();
+        }
         
         $pdf = PDF::loadView('cetak',compact('tasks'));
-        return $pdf->download('detail.pdf');
+        return $pdf->download('laporan.pdf');
     }
 
     public function updatestatus(Request $request, $id){

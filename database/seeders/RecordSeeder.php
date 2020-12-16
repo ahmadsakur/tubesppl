@@ -22,7 +22,7 @@ class RecordSeeder extends Seeder
                 'id_ruang' => strval($ruang),
                 'id_cs' => strval($cs),
                 'status' => 'KOTOR',
-                'tanggal' => '2020-12-15'
+                'tanggal' => '2020-12-16'
             ]);
             $cs++; 
             $ruang++;
@@ -35,7 +35,7 @@ class RecordSeeder extends Seeder
                 'id_ruang' => strval($ruang2),
                 'id_cs' => strval($cs2),
                 'status' => 'KOTOR',
-                'tanggal' => '2020-12-15'
+                'tanggal' => '2020-12-16'
             ]);
             $cs2++; 
             $ruang2++;
